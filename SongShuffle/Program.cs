@@ -6,32 +6,24 @@ namespace SongShuffle
     {
         static void Main(string[] args)
         {
-            var configurationBuilder = new ConfigurationBuilder()
-                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                .AddJsonFile("C:\\Code\\SongShuffle\\SongShuffle\\appsettings.json", optional: true, reloadOnChange: true)
-                //.AddEnvironmentVariables()
-                //.AddUserSecrets<Program>()
-                .AddCommandLine(args);
+            Welcome();
+            DisplaySong();
+        }
 
-            var configuration = configurationBuilder.Build();
-
-            var decade = configuration["Decade"] switch
-            {
-                "Nineties" => SongProvider.Decades.Nineties,
-                "TwoThousands" => SongProvider.Decades.TwoThousands,
-                "TwentyTens" => SongProvider.Decades.TwentyTens,
-                _ => SongProvider.Decades.Eighties
-            };
-
-            var provider = new SongProvider(decade);
-
+        public static void Welcome()
+        {
             Console.WriteLine("Welcome to the jam session!");
             Console.WriteLine("Press enter to get started...");
             Console.ReadLine();
+        }
 
-            Song song = new Song();
-
+        public static void DisplaySong()
+        {
             var userResponse = string.Empty;
+
+            var decade = SongProvider.Decades.Eighties;
+            var provider = new SongProvider(decade);
+            Song song = new Song();
 
             while (userResponse != "q")
             {
