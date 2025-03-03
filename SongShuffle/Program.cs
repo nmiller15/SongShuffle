@@ -6,17 +6,25 @@ namespace SongShuffle
     {
         static void Main(string[] args)
         {
-            var decade = SongProvider.Decades.Eighties;
+            Welcome();
+            DisplaySong();
+        }
 
-            var provider = new SongProvider(decade);
-
+        public static void Welcome()
+        {
             Console.WriteLine("Welcome to the jam session!");
             Console.WriteLine("Press enter to get started...");
             Console.ReadLine();
+        }
 
-            Song song = new Song();
-
+        public static void DisplaySong()
+        {
             var userResponse = string.Empty;
+
+            var decade = SongProvider.Decades.Nineties;
+
+            var provider = new SongProvider(decade);
+            Song song = new Song();
 
             while (userResponse != "q")
             {
