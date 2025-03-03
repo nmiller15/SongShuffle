@@ -21,8 +21,7 @@ namespace SongShuffle
         {
             var userResponse = string.Empty;
 
-            var decade = SongProvider.Decades.Eighties;
-            var provider = new SongProvider(decade);
+            var provider = new SongProvider();
             Song song = new Song();
 
             while (userResponse != "q")
