@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SongShuffle
+﻿namespace SongShuffle
 {
     class SongProvider
     {
@@ -17,6 +11,7 @@ namespace SongShuffle
         }
 
         public List<Song> SongBank = new List<Song>();
+        public int Counter { get; set; } = 0;
 
         private List<Song> EightiesSongs = new List<Song>()
         {
@@ -130,8 +125,6 @@ namespace SongShuffle
                     throw new ArgumentException("Must include a valid decade.");
             }
         }
-
-        public int Counter { get; set; } = 0;
 
         public Song ShuffleSelect()
         {

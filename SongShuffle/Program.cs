@@ -6,22 +6,7 @@ namespace SongShuffle
     {
         static void Main(string[] args)
         {
-            var configurationBuilder = new ConfigurationBuilder()
-                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                .AddJsonFile("C:\\Code\\SongShuffle\\SongShuffle\\appsettings.json", optional: true, reloadOnChange: true)
-                //.AddEnvironmentVariables()
-                //.AddUserSecrets<Program>()
-                .AddCommandLine(args);
-
-            var configuration = configurationBuilder.Build();
-
-            var decade = configuration["Decade"] switch
-            {
-                "Nineties" => SongProvider.Decades.Nineties,
-                "TwoThousands" => SongProvider.Decades.TwoThousands,
-                "TwentyTens" => SongProvider.Decades.TwentyTens,
-                _ => SongProvider.Decades.Eighties
-            };
+            var decade = SongProvider.Decades.Eighties;
 
             var provider = new SongProvider(decade);
 
