@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SongShuffle": {
+      "commandName": "Project",
+      "commandLineArgs": "--Decade TwentyTens"
+    }
+  }
+}

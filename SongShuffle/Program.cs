@@ -6,15 +6,16 @@ namespace SongShuffle
     {
         static void Main(string[] args)
         {
-            var config = LoadConfig();
+            var config = LoadConfig(args);
             Welcome();
             DisplaySong(config);
         }
 
-        public static IConfiguration LoadConfig()
+        public static IConfiguration LoadConfig(string[] args)
         {
             var builder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddCommandLine(args);
             return builder.Build();
         }
 
