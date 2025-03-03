@@ -45,16 +45,6 @@ namespace SongShuffle
             new Song("In the Air Tonight", "Phil Collins", "Face Value", "Rock", 1981),
             new Song("Time After Time", "Cyndi Lauper", "She's So Unusual", "Pop", 1983),
             new Song("Material Girl", "Madonna", "Like a Virgin", "Pop", 1984),
-            new Song("Baba O'Riley", "The Who", "Who's Next", "Rock", 1971),
-            new Song("My Generation", "The Who", "My Generation", "Rock", 1965),
-            new Song("Pinball Wizard", "The Who", "Tommy", "Rock", 1969),
-            new Song("Won't Get Fooled Again", "The Who", "Who's Next", "Rock", 1971),
-            new Song("Behind Blue Eyes", "The Who", "Who's Next", "Rock", 1971),
-            new Song("Who Are You", "The Who", "Who Are You", "Rock", 1978),
-            new Song("I Can See for Miles", "The Who", "The Who Sell Out", "Rock", 1967),
-            new Song("Magic Bus", "The Who", "Magic Bus: The Who on Tour", "Rock", 1968),
-            new Song("Substitute", "The Who", "Single", "Rock", 1966),
-            new Song("Love, Reign o'er Me", "The Who", "Quadrophenia", "Rock", 1973)
         };
 
         private List<Song> NinetiesSongs = new List<Song>()
