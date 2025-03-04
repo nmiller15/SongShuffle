@@ -15,7 +15,8 @@ namespace SongShuffle
         {
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddCommandLine(args);
+                .AddCommandLine(args)
+                .AddEnvironmentVariables();
             return builder.Build();
         }
 
@@ -49,14 +50,19 @@ namespace SongShuffle
                 Console.WriteLine();
                 Console.WriteLine($"Now playing {song.ToString()}");
                 Console.WriteLine();
-                Console.WriteLine(@"
+
+                if (config["ShowImage"]?.ToLower() == "true")
+                {
+                    Console.WriteLine(@"
             ╔══╗
             ║██║
             ║(O)║♫ ♪ ♫ ♪
             ╚══╝
     ▄ █ ▄ █ ▄ ▄ █ ▄ █ ▄ █
       
-    ");
+                ");
+                }
+
                 Console.WriteLine();
                 Console.WriteLine("Ready for another jam? Hit enter!");
                 Console.WriteLine("(Type q to quit.)");

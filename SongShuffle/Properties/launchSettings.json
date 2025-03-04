@@ -2,7 +2,10 @@
   "profiles": {
     "SongShuffle": {
       "commandName": "Project",
-      "commandLineArgs": "--Decade TwentyTens"
+      "commandLineArgs": "--Decade TwentyTens",
+      "environmentVariables": {
+        "ShowImage": "true"
+      }
     }
   }
 }
