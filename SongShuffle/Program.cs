@@ -16,7 +16,8 @@ namespace SongShuffle
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddCommandLine(args)
-                .AddEnvironmentVariables();
+                .AddEnvironmentVariables()
+                .AddUserSecrets<Program>();
             return builder.Build();
         }
 
@@ -30,6 +31,7 @@ namespace SongShuffle
         public static void DisplaySong(IConfiguration config)
         {
             var userResponse = string.Empty;
+            var counter = 0;
 
             var decade = config["Decade"] switch
             {
@@ -64,10 +66,24 @@ namespace SongShuffle
                 }
 
                 Console.WriteLine();
-                Console.WriteLine("Ready for another jam? Hit enter!");
-                Console.WriteLine("(Type q to quit.)");
 
-                userResponse = Console.ReadLine()?.ToLower();
+                
+                if (counter == 4)
+                {
+                    Console.WriteLine("You've listened to 5 songs! Want to keep going?");
+                    Console.WriteLine("(Type q to quit.)");
+                    userResponse = Console.ReadLine()?.ToLower();
+                    counter = 0;
+                }
+                if (config["Autoplay"]?.ToLower() == "true")
+                {
+                    Thread.Sleep(2000);
+                    counter++;
+                }
+                else
+                {
+                    userResponse = Console.ReadLine()?.ToLower();
+                }
             }
         }
     }
