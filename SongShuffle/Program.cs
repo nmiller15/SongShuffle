@@ -51,7 +51,7 @@ namespace SongShuffle
                 Console.WriteLine($"Now playing {song.ToString()}");
                 Console.WriteLine();
 
-                if (config["ShowImage"]?.ToLower() == "true")
+                if (config["ShowImage"].Equals("true", StringComparison.OrdinalIgnoreCase))
                 {
                     Console.WriteLine(@"
             ╔═══╗
