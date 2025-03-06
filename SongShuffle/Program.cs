@@ -54,10 +54,10 @@ namespace SongShuffle
                 if (config["ShowImage"]?.ToLower() == "true")
                 {
                     Console.WriteLine(@"
-            ╔══╗
-            ║██║
+            ╔═══╗
+            ║███║
             ║(O)║♫ ♪ ♫ ♪
-            ╚══╝
+            ╚═══╝
     ▄ █ ▄ █ ▄ ▄ █ ▄ █ ▄ █
       
                 ");
