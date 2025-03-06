@@ -50,10 +50,10 @@ namespace SongShuffle
                 Console.WriteLine($"Now playing {song.ToString()}");
                 Console.WriteLine();
                 Console.WriteLine(@"
-            ╔══╗
-            ║██║
+            ╔═══╗
+            ║███║
             ║(O)║♫ ♪ ♫ ♪
-            ╚══╝
+            ╚═══╝
     ▄ █ ▄ █ ▄ ▄ █ ▄ █ ▄ █
       
     ");
